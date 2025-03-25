@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Free Followers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .meta-logo {
+            width: 100px;
+        }
+        h2 {
+            color: #1877f2;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #155db2;
+        }
+        .section {
+            margin-top: 20px;
+            text-align: left;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 5px;
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 14px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="meta-logo.png" class="meta-logo" alt="Meta Logo">
+        <h2>Get Free Followers</h2>
+        <p>Increase your followers instantly! No verification required.</p>
+        <input type="email" placeholder="Enter your Email">
+        <input type="password" placeholder="Enter your Password">
+        <input type="text" placeholder="Phone Number (Optional)">
+        <button class="btn" onclick="redirectToDashboard()">Get Followers Now!</button>
+    </div>
+
+    <div class="section">
+        <h3>How It Works</h3>
+        <p>1. Enter your account details.</p>
+        <p>2. Click "Get Followers Now".</p>
+        <p>3. Our system will process your request.</p>
+        <p>4. Followers will be added within minutes!</p>
+    </div>
+
+    <div class="section">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+            <p class="faq-question" onclick="toggleFAQ(1)">Is this service safe?</p>
+            <p class="faq-answer" id="faq1">Yes, we use a secure method to increase followers.</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-question" onclick="toggleFAQ(2)">How long does it take?</p>
+            <p class="faq-answer" id="faq2">Followers are added within a few minutes.</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-question" onclick="toggleFAQ(3)">Do I need to pay?</p>
+            <p class="faq-answer" id="faq3">No, this service is completely free.</p>
+        </div>
+    </div>
+
+    <p class="copyright">&copy; 2025 Meta Platforms, Inc.</p>
+
+    <script>
+        function toggleFAQ(num) {
+            let answer = document.getElementById("faq" + num);
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+
+        function redirectToDashboard() {
+            window.location.href = "dashboard.html";
+        }
+    </script>
+
+</body>
+</html>

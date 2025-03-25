@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Follower Boost</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .progress {
+            width: 100%;
+            background: #ddd;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #007bff;
+            transition: width 1s;
+        }
+        .reviews {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .review {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .review img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .review-text {
+            font-size: 14px;
+        }
+        .view-more {
+            display: block;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .meta-logo {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .copyright {
+            font-size: 12px;
+            color: gray;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Facebook_Logo_%282019%29.svg" alt="Meta Logo" class="meta-logo">
+        
+        <h2>Follower Boost in Progress</h2>
+        <p id="followers-count">🎉 +0 Followers Added</p>
+        <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <p id="status-text">Verifying your account...</p>
+
+        <div class="reviews" id="reviews">
+            <h3>Recent Reviews</h3>
+            <div class="review">
+                <img src="https://randomuser.me/api/portraits/men/10.jpg" alt="User">
+                <div class="review-text">
+                    <strong>Michael Johnson</strong> <br>
+                    🚀 "I woke up to 600 new followers! This is insane!"
+                </div>
+            </div>
+            <div class="review">
+                <img src="https://randomuser.me/api/portraits/women/15.jpg" alt="User">
+                <div class="review-text">
+                    <strong>Jessica Adams</strong> <br>
+                    ⭐ "At first, I doubted it, but wow! My account blew up overnight!"
+                </div>
+            </div>
+            <div class="review">
+                <img src="https://randomuser.me/api/portraits/men/20.jpg" alt="User">
+                <div class="review-text">
+                    <strong>Daniel Lee</strong> <br>
+                    🔥 "Best tool ever! Gained over 500 followers instantly!"
+                </div>
+            </div>
+        </div>
+        
+        <button class="view-more" onclick="loadMoreReviews()">View More Reviews</button>
+
+        <p class="copyright">© 2025 Meta Platforms, Inc.</p>
+    </div>
+
+    <script>
+        let count = 0;
+        function updateProgress() {
+            let bar = document.getElementById("progress-bar");
+            let text = document.getElementById("status-text");
+            let countText = document.getElementById("followers-count");
+
+            let interval = setInterval(() => {
+                if (count >= 100) {
+                    clearInterval(interval);
+                    text.innerText = "Adding followers to Facebook account. Please wait...";
+                    setTimeout(() => {
+                        text.innerText = "✅ Followers successfully added!";
+                        countText.innerHTML = "🎉 +512 Followers Added";
+                    }, 5000);
+                } else {
+                    count += 5;
+                    bar.style.width = count + "%";
+                    countText.innerHTML = `🎉 +${Math.floor(count * 5.12)} Followers Added`;
+                }
+            }, 500);
+        }
+
+        function loadMoreReviews() {
+            let reviewsContainer = document.getElementById("reviews");
+            let moreReviews = "";
+            let reviewData = [
+                { name: "Sophia Carter", text: "Unbelievable! My engagement skyrocketed! 🚀", img: "women/30.jpg" },
+                { name: "James Williams", text: "This actually works! 10/10 service!", img: "men/40.jpg" },
+                { name: "Emma Brown", text: "Wow! Over 700 new followers in a day!", img: "women/45.jpg" },
+                { name: "David Smith", text: "Never thought I'd see real results. I'm impressed!", img: "men/50.jpg" },
+                { name: "Olivia Martin", text: "Amazing tool! Gained over 1k followers in 2 days!", img: "women/55.jpg" },
+                { name: "Chris Jones", text: "My page looks way more legit now. Thanks!", img: "men/60.jpg" },
+                { name: "Ava White", text: "This service is a game changer for influencers!", img: "women/65.jpg" },
+                { name: "Benjamin Scott", text: "500+ followers and growing! Highly recommended!", img: "men/70.jpg" },
+                { name: "Lily Walker", text: "Absolutely worth it! My account is now booming!", img: "women/75.jpg" },
+                { name: "Ethan Garcia", text: "Perfect boost for small creators like me!", img: "men/80.jpg" }
+            ];
+            
+            reviewData.forEach(review => {
+                moreReviews += `
+                <div class="review">
+                    <img src="https://randomuser.me/api/portraits/${review.img}" alt="User">
+                    <div class="review-text">
+                        <strong>${review.name}</strong> <br>
+                        ${review.text}
+                    </div>
+                </div>
+                `;
+            });
+
+            reviewsContainer.innerHTML += moreReviews;
+            document.querySelector(".view-more").style.display = "none";
+        }
+
+        updateProgress();
+    </script>
+
+</body>
+</html>
